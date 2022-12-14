@@ -1,14 +1,14 @@
 import propTypes from 'prop-types';
-import style from './Feedback.modele.css';
+import style from './Feedback.module.css';
 
-export default function Feedback({ options, onReview }) {
+export default function Feedback({ options, onLeaveFeedback }) {
   return (
     <div className={style.controls}>
       {options.map(type => (
         <button
           className={style.button}
           key={type}
-          onClick={onReview}
+          onClick={onLeaveFeedback}
           data-type={type}
         >
           {type}
@@ -19,5 +19,5 @@ export default function Feedback({ options, onReview }) {
 }
 Feedback.propTypes = {
   options: propTypes.arrayOf(propTypes.string).isRequired,
-  onReview: propTypes.func.isRequired,
+  onLeaveFeedback: propTypes.func.isRequired,
 };
